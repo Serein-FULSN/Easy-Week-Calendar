@@ -1,0 +1,9 @@
+{
+  "id": "easy week-calendar",
+  "name": "Easy Week Calendar",
+  "version": "1.0.2",
+  "minAppVersion": "1.4.0",
+  "description": "Type 'week:2026.09.03 your intro' in a note to render a weekly calendar table, with previous/current/next week dates and weekly summaries collected from your vault.",
+  "author": "fufu",
+  "isDesktopOnly": false
+}

@@ -1,0 +1,84 @@
+/* ===== Week Calendar 周历插件样式 ===== */
+
+/* widget 包裹层: 占满编辑区宽度, 靠 text-align 让表格水平居中 */
+/* (比 table + margin:auto 稳, 表格不会因为 auto 宽度撑出容器被裁掉) */
+.week-cal-widget {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.week-cal-widget:not(.week-cal-static) {
+  cursor: pointer;
+}
+
+.week-cal-table {
+  border-collapse: collapse;
+  display: inline-table;
+  margin: 0.5em 0 1em 0;
+  max-width: 100%;
+  table-layout: auto;
+}
+
+.week-cal-table th,
+.week-cal-table td {
+  border: 1px solid var(--background-modifier-border);
+  padding: 4px 8px;
+  text-align: center;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.week-cal-table th {
+  background: var(--background-secondary);
+  font-weight: 600;
+}
+
+/* 日期格: 保持正方形 (宽高一致) */
+.week-cal-table td.week-cal-date {
+  width: 2.6em;
+  min-width: 2.6em;
+  max-width: 2.6em;
+  height: 2.6em;
+}
+
+/* 星期表头 (一~日) 与日期列同宽 */
+.week-cal-table th.week-cal-day-head {
+  width: 2.6em;
+  min-width: 2.6em;
+  height: 1.9em;
+}
+
+/* 第 1 行: 年月-周-简介 */
+.week-cal-table .week-cal-title {
+  background: var(--background-secondary);
+  font-weight: 700;
+  text-align: center;
+}
+
+/* 不属于当月的日期 (如 8/31, 10/1) 弱化显示 */
+.week-cal-table td.week-cal-other-month {
+  color: var(--text-faint);
+}
+
+/* 当前周: 用与上下两周不同的底色突出 */
+.week-cal-table tr.week-cal-current td.week-cal-date {
+  background: var(--week-cal-current-bg, rgba(59, 130, 246, 0.18));
+  font-weight: 700;
+  color: var(--text-normal);
+}
+
+/* 右侧往周简介列 */
+.week-cal-table td.week-cal-intro {
+  text-align: left;
+  color: var(--text-muted);
+  font-size: 0.9em;
+  min-width: 6em;
+  max-width: 14em;
+  word-break: break-word;
+  white-space: normal;
+}
+
+.week-cal-table .week-cal-intro-head {
+  min-width: 6em;
+}
